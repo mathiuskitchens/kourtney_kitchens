@@ -1,0 +1,39 @@
+---
+import { Icon } from 'astro-icon/components'
+import Hamburger from './Hamburger.astro'
+---
+<div id="header-container" class="grid grid-cols-3 font-serif">
+<!-- Left Column -->
+<div class="items-center my-auto md:flex">
+<ul class="text-links cursor-pointer md:flex mx-12 ">
+<a href="https://www.instagram.com/kourtney_kitchens/"><Icon name="insta" size={30} class="mx-2"></a>
+<a href="google.com"><Icon name="youtube" size={30} class="mx-2 hidden md:block"></a>
+<a href="google.com"><Icon name="facebook" size={30} class="mx-2 hidden md:block"></a>
+
+</ul>
+</div>
+<!-- Middle Column with just Name/Logo -->
+<div class="animate-slide-up">
+<h1 class="text-center block my-12 text-4xl md:text-6xl col-span-2 md:col-span-1">Kourtney  Kitchens</h1>
+</div>
+<!-- Right Column -->
+
+<div class="flex items-center justify-center">
+<button class="bg-btnColor hover:scale-105 py-3 px-10 rounded-lg  mx-auto hidden md:flex">Contact</button>
+<Hamburger />
+</div>
+</div>
+
+<style>
+@font-face {
+  font-family: 'QwitcherGrypen-Regular';
+  src: url('/fonts/QwitcherGrypen-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1 {
+    font-family: 'QwitcherGrypen-Regular', sans-serif;
+}
+</style>
