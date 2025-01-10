@@ -13,7 +13,7 @@ import Hamburger from './Hamburger.astro'
 </ul>
 </div>
 <!-- Middle Column with just Name/Logo -->
-<div class="animate-slide-up">
+<div class="animate-slide-up hover:cursor-pointer" id="nameHeading" >
 <h1 class="text-center block my-12 text-4xl md:text-6xl col-span-2 md:col-span-1">Kourtney  Kitchens</h1>
 </div>
 <!-- Right Column -->
@@ -37,3 +37,12 @@ h1 {
     font-family: 'QwitcherGrypen-Regular', sans-serif;
 }
 </style>
+
+<script>
+import { navigate } from "astro:transitions/client";
+
+  const nameHeading = document.querySelector('#nameHeading');
+  nameHeading?.addEventListener('click', () => {
+    navigate('/')
+  })
+</script>

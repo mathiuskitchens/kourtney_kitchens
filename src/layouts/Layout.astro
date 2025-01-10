@@ -1,4 +1,5 @@
 ---
+import Navigation from '../components/Navigation.astro';
 interface Props {
 	title: string;
 }
@@ -16,17 +17,31 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
+	<nav>		
+		<Navigation />
+	</nav>
+
 	<body>
-		<slot />
+		<div>
+			<slot />
+
+		</div>
 	</body>
 </html>
 <style is:global>
 
-	html {
+	body {
 		background: #edeae9;
 	}
 	p {
 		font-family: sans-serif;
 	}
+	
 
 </style>
+
+<script>
+	import '../scripts/menu.js'
+	
+	
+</script>

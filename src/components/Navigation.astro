@@ -5,10 +5,11 @@ import ContactHeader from "./ContactHeader.astro"
 <ContactHeader />
 
 <!-- Navigation Links -->
-<ul class="hidden md:flex gap-8 justify-center max-w-full mx-10 my-4 font-serif text-links ">
+<ul class="hidden md:flex gap-8 justify-center max-w-full mx-10 my-4 font-serif text-links z-10">
 <a href="/" class="hover:underline">Home</a>
 <a href="/speaking/" class="hover:underline">Speaking</a>
 <a href="/about/" class="hover:underline">About</a>
 <a href="/bible-study/" class="hover:underline">Bible Study</a>
 <a href="/resources/" class="hover:underline">Resources</a>
 </ul>
+<slot />
