@@ -1,21 +1,35 @@
 ---
 import { Image } from "astro:assets";
-import welcomePic from '../images/welcomePic.jpeg'
+import homepagePic from '../images/homepagePic.jpeg'
 ---
-<div class="block md:flex">
-<h1 class="text-5xl mb-24 mt-32 mx-4 ">Walking in <i>healing</i>. Living on <i>purpose</i>.</h1>
-<Image class="saturate-75 object-cover w-auto" src={welcomePic} alt="welcomePic" width={500} height={500} />
+<div class="block md:flex items-center"> 
+  <div class="md:order-1 md:w-1/2"> 
+    <Image 
+      class="saturate-75 object-cover w-full rounded-t-full md:rounded-tl-full md:rounded-br-none" 
+      src={homepagePic} 
+      alt="welcomePic" 
+      width={500} 
+      height={500} 
+    />
+  </div>
+  <div class="md:order-2 md:w-1/2 p-4 md:p-8"> 
+    <h1 class="text-5xl mb-8 md:mb-24 mt-8 md:mt-32"> 
+      Walking in <i>healing</i>. Living on <i>purpose</i>.
+    </h1> 
+  </div>
 </div>
 
 
 <style>
     @font-face {
   font-family: 'Imbue';
-  src: url('/fonts/Imbue-VariableFont_opsz,wght.ttf') format('truetype');
+    src: url('/fonts/Imbue-VariableFont_opsz,wght.ttf') format('truetype');
+
   font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
+
 h1 {
     font-family: 'Imbue', sans-serif;
 }

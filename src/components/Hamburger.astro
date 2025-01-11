@@ -11,9 +11,10 @@
     <div class="menu">
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/speaking">Speaking</a></li>
             <li><a href="/about">About</a></li>
-            <li><a href="/bible-study">Bible Study</a></li>
+            <li><a href="/books">Books</a></li>
+            <li><a href="/diy">DIY Projects</a></li>
+            <li><a href="/speaking">Speaking</a></li>
             <li><a href="/resources">Resources</a></li>
 
             <li>Contact</li>
@@ -23,6 +24,7 @@
 
 <style>
         #menuOverlay {
+            display: hidden;
             position: absolute;
             margin: 200px 0 0 0;
             z-index: 0;
@@ -40,14 +42,13 @@
             font-size: 2rem;
         }
         .hidden {
-            display: none;
+            display: hidden;
             position:relative;
             opacity: 0;
             transition: opacity 0.3s ease-in;
         }
         .active {
-            display: flex;
-
+            display:flex;
             opacity: 1;
             transition: opacity 0.3s ease-in;
             

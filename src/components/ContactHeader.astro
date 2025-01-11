@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon/components'
 import Hamburger from './Hamburger.astro'
 ---
-<div id="header-container" class="grid grid-cols-3 font-serif">
+<div id="header-container" class="grid grid-cols-3 font-serif h-48 md:h-72">
 <!-- Left Column -->
 <div class="items-center my-auto md:flex">
 <ul class="text-links cursor-pointer md:flex mx-12 ">
@@ -13,8 +13,11 @@ import Hamburger from './Hamburger.astro'
 </ul>
 </div>
 <!-- Middle Column with just Name/Logo -->
-<div class="animate-slide-up hover:cursor-pointer" id="nameHeading" >
-<h1 class="text-center block my-12 text-4xl md:text-6xl col-span-2 md:col-span-1">Kourtney  Kitchens</h1>
+<div class="animate-slide-up hover:cursor-pointer mt-8" id="nameHeading" >
+<!-- fix spacing at top -->
+<h1 class="text-center mt-6 md:mt-0 block text-6xl md:text-9xl col-span-1 md:col-span-1 md:absolute md:left-px" id="kourtney">Kourtney</h1>
+<h1 class="text-center -my-6 md:my-0 block text-6xl md:text-9xl  col-span-1 md:col-span-1 md:absolute top-32" id="kitchens">Kitchens</h1>
+
 </div>
 <!-- Right Column -->
 
@@ -26,15 +29,31 @@ import Hamburger from './Hamburger.astro'
 
 <style>
 @font-face {
-  font-family: 'QwitcherGrypen-Regular';
-  src: url('/fonts/QwitcherGrypen-Regular.ttf') format('truetype');
+  font-family: 'Salonica';
+  src: url('/fonts/Salonica.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 h1 {
-    font-family: 'QwitcherGrypen-Regular', sans-serif;
+    font-family: 'Salonica', sans-serif;
+    /* font-size: 10rem; */
+}
+
+@media (min-width: 768px) {
+
+  #kourtney {
+     
+        left: 30rem;
+    
+  }
+  #kitchens {
+    right: 30rem;
+  }
+
+
+
 }
 </style>
 

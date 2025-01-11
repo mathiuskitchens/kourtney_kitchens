@@ -1,5 +1,6 @@
 ---
 import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 interface Props {
 	title: string;
 }
@@ -27,15 +28,38 @@ const { title } = Astro.props;
 
 		</div>
 	</body>
+	<footer>
+		<Footer />
+	</footer>
 </html>
 <style is:global>
 
+@font-face {
+    font-family: 'Lora';
+    src: url('/fonts/Lora-VariableFont_wght.ttf') format('truetype');
+  }
+
+  @font-face {
+  font-family: 'Salonica';
+  src: url('/fonts/Salonica.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
 	body {
 		background: #edeae9;
 	}
 	p {
-		font-family: sans-serif;
+		/* font-family: 'Lora', sans-serif; */
 	}
+
+	#nav-links {
+		font-family: 'Lora', sans-serif;
+	}
+
+	#footer-name {
+    font-family: 'Salonica', sans-serif;
+  }
 	
 
 </style>
