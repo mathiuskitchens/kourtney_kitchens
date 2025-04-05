@@ -2,19 +2,20 @@
 import { Image } from "astro:assets";
 import homepagePic from '../images/homepagePic.jpeg'
 ---
-<div class="block md:flex items-center"> 
+<div class="block md:flex items-center mx-12"> 
   <div class="md:order-1 md:w-1/2"> 
     <Image 
-      class="saturate-75 object-cover w-full rounded-t-full md:rounded-tl-full md:rounded-br-none" 
+      class="saturate-75 object-cover xl:mx-20 rounded-t-full md:rounded-tl-full md:rounded-br-none" 
       src={homepagePic} 
       alt="welcomePic" 
       width={500} 
       height={500} 
-    />
+      loading={"eager"}
+      />
   </div>
-  <div class="md:order-2 md:w-1/2 p-4 md:p-8"> 
+  <div class="md:order-2 md:w-1/2 p-4 md:px-8"> 
     <h1 class="text-5xl mb-8 md:mb-24 mt-8 md:mt-32"> 
-      Walking in <i>healing</i>. Living on <i>purpose</i>.
+      Empowering Women to Share Their Faith & Make Disciples in Everyday Life.
     </h1> 
   </div>
 </div>
