@@ -1,0 +1,43 @@
+---
+
+---
+<div class="bg-btnColor p-12 md:px-24 lg:px-48 xl:px-92 block">
+    <h1 class="text-center text-3xl mb-8">Stay in touch</h1>
+    <form id="email-form" class="mx-8 md:mx-32 flex flex-col items-center space-y-6" action="/submit" method="post">
+        <div class="w-full flex flex-col items-center">
+            <label for="email" class="text-lg mb-2">Email</label>
+            <input class="p-3 rounded-lg w-72  focus:outline-none focus:ring-2 focus:ring-links" type="email" placeholder="Your Email" id="email" name="email" required />
+        </div>
+
+        <div class="w-full flex flex-col items-center">
+            <label for="firstName" class=" text-lg  mb-2">First Name</label>
+            <input class="p-3 rounded-lg w-72  focus:outline-none focus:ring-2 focus:ring-links" type="text" placeholder="First Name" id="firstName" name="firstName" />
+        </div>
+
+        <div class="w-full flex flex-col items-center">
+            <label for="lastName" class=" text-lg mb-2">Last Name</label>
+            <input class="p-3 rounded-lg w-72 focus:outline-none focus:ring-2 focus:ring-links" type="text" placeholder="Last Name" id="lastName" name="lastName" />
+        </div>
+
+        <button type="submit" class="mt-12 bg-links text-white hover:scale-105 py-3 rounded-lg w-56 mx-auto block transition-transform duration-200">Keep me updated!</button>
+    </form>
+</div>
+
+<script>
+import { actions } from "astro:actions";
+
+    const form = document.getElementById('email-form');
+    const submitButton = document.getElementById('email-form');
+
+    submitButton?.addEventListener('submit', async (event) => {
+        event.preventDefault(); 
+        const formData = new FormData(form as HTMLFormElement);
+        const { data, error } = await actions.addEmailSubscriber(formData);
+        if (!error) {
+            alert(data)
+        } else {
+            alert(error)
+        }
+   
+    });
+</script>
