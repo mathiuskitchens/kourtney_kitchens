@@ -7,6 +7,7 @@ export default {
       background: '#edeae9',
       links: '#be967d',
       btnColor: '#e9dfde',
+      darkerBtnColor: '#c3a387',
       blackBG: '#2b2b2b',
       brownText: '#967159',
       white: '#ffffff',

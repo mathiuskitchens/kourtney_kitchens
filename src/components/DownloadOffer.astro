@@ -1,4 +1,6 @@
 ---
+import bookPic1 from "../images/WritingUpdate1.png"
+import Image from "astro/components/Image.astro"
 ---
 
 <div class="bg-blackBG h-auto py-8 md:px-24">
@@ -19,6 +21,14 @@
         <br/>
         <br/>
         The Harvest is your discipleship bestie—Grab your copy today.</p>
+        <Image 
+        class="mx-auto my-12" 
+        src={bookPic1} 
+        alt="Picture of The Harvest book" 
+        width={500} 
+        height={500} 
+        loading={"eager"}
+        />
         <button class="bg-btnColor hover:scale-105 py-3 rounded-lg w-56 mx-auto block transition-transform duration-200"><a href="https://www.barnesandnoble.com/w/the-harvest-kourtney-kitchens/1146537412" target="_blank">Get yours here!</a></button>
 
 </div>

@@ -25,6 +25,10 @@ export default defineConfig({
         context: 'server',
         access: 'secret',
       }),
+      PUBLIC_STRIPE_KEY: envField.string({
+        context: 'server',
+        access: 'secret',
+      }),
     },
   },
 });

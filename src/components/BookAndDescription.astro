@@ -1,0 +1,67 @@
+---
+import Image from "astro/components/Image.astro";
+import DarkBook from "../images/BookDark.png";
+import Harvest_Book_PDF from "../images/Harvest_Book_PDF.png"
+---
+
+<div class="block lg:flex justify-center">
+    <div class="flex-1 w-5/6 lg:w-1/2 text-center h-full mx-auto">
+        <h1 class="text-center w-full">The Harvest</h1>
+
+        <Image
+            class="rounded-md justify-center mx-auto"
+            src={DarkBook}
+            alt="Picture of The Harvest book"
+            width={500}
+            height={500}
+            loading={"eager"}
+        />
+    </div>
+    <div
+        class="flex-1 w-5/6 mx-auto lg:w-1/2 text-center lg:text-left lg:h-full my-auto px-4 py-8 lg:px-24"
+    >
+        <div class="flex justify-center gap-6 mb-8 lg:mt-16">
+            <button
+                class="bg-darkerBtnColor hover:scale-105 py-3 rounded-lg w-56 transition-transform duration-200"
+            >
+                <a
+                    href="https://payhip.com/KourtneyKitchens"
+                    target="_blank"
+                >Buy Physical Copy</a>
+            </button>
+            <button
+                class="bg-darkerBtnColor hover:scale-105 py-3 rounded-lg w-56 transition-transform duration-200"
+            >
+                <a
+                    href="https://payhip.com/KourtneyKitchens"
+                    target="_blank"
+                >Buy Digital Copy</a>
+            </button>
+        </div>
+        <p class="lg:text-2xl/10">
+            Hello, friend! As believers, we've all heard the call to "go and
+            make disciples." But have you ever wondered what this looks like in
+            your daily life? As women, we're uniquely positioned in various
+            spaces where Jesus is calling us to sow the seed of the gospel. This
+            book is designed to provide practical strategies for sharing the
+            gospel and equipping you to make disciples along the way. So, pour
+            yourself a cup of coffee or tea, and let's embark on this journey
+            together.
+        </p>
+    </div>
+</div>
+
+<style>
+    @font-face {
+        font-family: "Salonica";
+        src: url("/fonts/Salonica.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: block;
+    }
+
+    h1 {
+        font-family: "Salonica", sans-serif;
+        font-size: 5rem;
+    }
+</style>
