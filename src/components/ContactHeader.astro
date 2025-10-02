@@ -3,16 +3,21 @@ import { Icon } from 'astro-icon/components'
 import Hamburger from './Hamburger.astro'
 ---
 <div id="header-container" class="grid grid-cols-3 font-serif h-48 md:h-72">
-<!-- Left Column -->
-<div class="items-center my-auto md:flex">
-<ul class="text-links cursor-pointer md:flex mx-12 ">
-<a href="https://www.instagram.com/inthemessymiddlewithkourt/" aria-label="Link to Instagram" target="_blank"><Icon name="insta" size={30} class="mx-2"></a>
-            <a href="https://www.facebook.com/kourtney.kitchens1" aria-label="Link to Facebook" target="_blank"><Icon name="facebook" size={30} class="mx-2"></a>
-
-
-
-</ul>
-</div>
+  <!-- Left Column -->
+  <div class="items-center my-auto flex">
+    <ul class="flex flex-row items-center text-links cursor-pointer flex-nowrap ml-2 md:mx-auto">
+      <li>
+        <a href="https://www.instagram.com/inthemessymiddlewithkourt/" aria-label="Link to Instagram" target="_blank">
+          <Icon name="insta" size={30} class="mx-2" />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.facebook.com/kourtney.kitchens1" aria-label="Link to Facebook" target="_blank">
+          <Icon name="facebook" size={30} class="mx-2" />
+        </a>
+      </li>
+    </ul>
+  </div>
 <!-- Middle Column with just Name/Logo -->
 <div class="animate-slide-up hover:cursor-pointer mt-8" id="nameHeading" >
 <!-- fix spacing at top -->
