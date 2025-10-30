@@ -15,12 +15,12 @@ export default {
     extend: {
       keyframes: {
         'slide-up': {
-          '0%': { transform: 'translateY(30%)' },
-          '100%': { transform: 'translateY(0)' },
+          '0%': { transform: 'translateY(30px)', opacity: '0.3' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
         },
       },
       animation: {
-        'slide-up': 'slide-up 0.3s ease-in-out',
+        'slide-up': 'slide-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
       },
     },
   },

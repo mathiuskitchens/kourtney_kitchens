@@ -8,11 +8,21 @@ import { Icon } from 'astro-icon/components'
     <h1 class="-py-4">Kitchens</h1>
 </div>
 <behold-widget class="my-12" feed-id="sL1efOBPQI1sOthpPaik"></behold-widget>
-<script>
-  (() => {
-    const d=document,s=d.createElement("script");s.type="module";
-    s.src="https://w.behold.so/widget.js";d.head.append(s);
-  })();
+<script is:inline>
+  // Defer Behold widget loading until after page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(() => {
+        const d=document,s=d.createElement("script");s.type="module";
+        s.src="https://w.behold.so/widget.js";s.defer=true;d.head.append(s);
+      }, 1000);
+    });
+  } else {
+    setTimeout(() => {
+      const d=document,s=d.createElement("script");s.type="module";
+      s.src="https://w.behold.so/widget.js";s.defer=true;d.head.append(s);
+    }, 1000);
+  }
 </script>
 <ul class="flex justify-center items-center flex-col my-4 underline text-xl">
 <li class=""><a href="/about">Meet Kourtney</a></li>

@@ -1,0 +1,71 @@
+---
+// Structured Data (JSON-LD) for SEO
+const siteURL = Astro.site || 'https://kourtneykitchens.com';
+const currentURL = new URL(Astro.url.pathname, siteURL).toString();
+---
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${siteURL}/#person`,
+      "name": "Kourtney Kitchens",
+      "description": "Author of The Harvest, encouraging women to pursue deep relationship with Jesus and share their faith authentically in everyday life.",
+      "url": siteURL,
+      "sameAs": [
+        "https://www.instagram.com/inthemessymiddlewithkourt/",
+        "https://www.facebook.com/kourtney.kitchens1"
+      ],
+      "jobTitle": "Author",
+      "knowsAbout": ["Christian Faith", "Discipleship", "Women's Ministry", "Writing"]
+    },
+    {
+      "@type": "Book",
+      "@id": `${siteURL}/books/#book`,
+      "name": "The Harvest",
+      "author": {
+        "@id": `${siteURL}/#person`
+      },
+      "description": "A practical guide for Christian women to understand their position and share the gospel without being weird or awkward. Provides practical strategies for sharing the gospel and equipping women to make disciples along the way.",
+      "url": `${siteURL}/books`,
+      "bookFormat": "Hardcover",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kourtney Kitchens"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteURL}/#website`,
+      "url": siteURL,
+      "name": "Kourtney Kitchens",
+      "description": "Official website of Kourtney Kitchens, author of The Harvest. Empowering women to share their faith and make disciples in everyday life.",
+      "publisher": {
+        "@id": `${siteURL}/#person`
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": `${siteURL}/search?q={search_term_string}`
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${currentURL}#webpage`,
+      "url": currentURL,
+      "name": "Kourtney Kitchens",
+      "isPartOf": {
+        "@id": `${siteURL}/#website`
+      },
+      "about": {
+        "@id": `${siteURL}/#person`
+      }
+    }
+  ]
+})} />
+
