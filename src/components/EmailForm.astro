@@ -2,8 +2,9 @@
 
 ---
 
-<div id="mc_embed_shell">
-      <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+<div id="mc_embed_shell" class="scroll-animate-up">
+      <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css" media="print" onload="this.media='all'">
+      <noscript><link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css"></noscript>
   <style type="text/css">
         #mc_embed_signup{font:16px Lora,sans-serif; width: 80%}
         /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
@@ -32,7 +33,21 @@
 </form>
 </div>
 
-<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='COMPANY';ftypes[6]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<script is:inline defer src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+<script is:inline>
+  // Defer Mailchimp validation script until after page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(() => {
+        (function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='COMPANY';ftypes[6]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
+      }, 500);
+    });
+  } else {
+    setTimeout(() => {
+      (function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='COMPANY';ftypes[6]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
+    }, 500);
+  }
+</script>
 <!-- <div class="bg-btnColor p-12 md:px-24 lg:px-48 xl:px-92 block">
     <h1 class="text-center text-3xl mb-8">Stay in touch</h1>
     <form id="email-form" class="mx-8 md:mx-32 flex flex-col items-center space-y-6" action="/submit" method="post">

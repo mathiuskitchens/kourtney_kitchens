@@ -7,9 +7,12 @@ import icon from 'astro-icon';
 
 import netlify from '@astrojs/netlify';
 
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), icon()],
+  site: 'https://kourtneykitchens.com',
+  integrations: [tailwind(), icon(), sitemap()],
   adapter: netlify(),
   env: {
     schema: {

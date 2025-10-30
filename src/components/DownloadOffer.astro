@@ -5,8 +5,8 @@ import Image from "astro/components/Image.astro"
 
 <div class="bg-blackBG h-auto py-8 md:px-24">
     
-    <p class="text-brownText text-center pt-8 text-xl">Hello there, I'm so glad you're here, friend!</p>
-    <p class="text-white my-8 mx-12 pb-6 text-xl text-center">
+    <p class="text-brownText text-center pt-8 text-xl scroll-animate-up">Hello there, I'm so glad you're here, friend!</p>
+    <p class="text-white my-8 mx-12 pb-6 text-xl text-center scroll-animate-up">
         We've all heard the call to "go and make disciples." But have you ever wondered what this looks like in your daily life? As women, we're uniquely positioned in various spaces where Jesus is calling us to sow the seed of the gospel. This interactive book is designed to provide practical strategies for sharing the gospel and empowering Christian women like YOU to make disciples along the way. 
 		<br/>
         <br/>
@@ -22,13 +22,15 @@ import Image from "astro/components/Image.astro"
         <br/>
         The Harvest is your discipleship bestie—Grab your copy today.</p>
         <Image 
-        class="mx-auto my-12" 
+        class="mx-auto my-12 scroll-animate-up" 
         src={bookPic1} 
-        alt="Picture of The Harvest book" 
+        alt="The Harvest book by Kourtney Kitchens - Available at Barnes & Noble" 
         width={500} 
         height={500} 
-        loading={"eager"}
+        loading={"lazy"}
         />
-        <button class="bg-btnColor hover:scale-105 py-3 rounded-lg w-56 mx-auto block transition-transform duration-200"><a href="https://www.barnesandnoble.com/w/the-harvest-kourtney-kitchens/1146537412" target="_blank">Get yours here!</a></button>
+        <div class="scroll-animate-up">
+          <a href="https://www.barnesandnoble.com/w/the-harvest-kourtney-kitchens/1146537412" target="_blank" class="bg-btnColor hover:scale-105 py-3 px-8 rounded-lg w-56 mx-auto block transition-all duration-200 shadow-md hover:shadow-lg text-center font-semibold">Get yours here!</a>
+        </div>
 
 </div>

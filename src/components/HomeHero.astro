@@ -3,17 +3,17 @@ import { Image } from "astro:assets";
 import homepagePic from '../images/homepagePic.jpeg'
 ---
 <div class="block md:flex items-center mx-12"> 
-  <div class="md:order-1 md:w-1/2"> 
+  <div class="md:order-1 md:w-1/2 scroll-animate-up"> 
     <Image 
       class="saturate-75 object-cover xl:mx-20 rounded-t-full md:rounded-tl-full md:rounded-br-none" 
       src={homepagePic} 
-      alt="welcomePic" 
+      alt="Kourtney Kitchens - Author and speaker empowering women to share their faith" 
       width={500} 
       height={500} 
       loading={"eager"}
       />
   </div>
-  <div class="md:order-2 md:w-1/2 p-4 md:px-8"> 
+  <div class="md:order-2 md:w-1/2 p-4 md:px-8 scroll-animate-up"> 
     <h1 class="text-5xl mb-8 md:mb-24 mt-8 md:mt-32"> 
       Empowering Women to Share Their Faith & Make Disciples in Everyday Life.
     </h1> 
@@ -28,7 +28,7 @@ import homepagePic from '../images/homepagePic.jpeg'
 
   font-weight: 200;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 h1 {
