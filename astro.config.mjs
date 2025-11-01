@@ -12,7 +12,14 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://kourtneykitchens.com',
-  integrations: [tailwind(), icon(), sitemap()],
+  integrations: [
+    tailwind(),
+    icon(),
+    sitemap({
+      changefreq: 'weekly',
+      priority: 0.8,
+    }),
+  ],
   adapter: netlify(),
   env: {
     schema: {

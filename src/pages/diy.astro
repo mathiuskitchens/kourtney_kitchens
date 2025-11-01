@@ -2,8 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout 
-	title="DIY Projects - Kourtney Kitchens" 
+<Layout
+	title="DIY Projects - Kourtney Kitchens"
 	description="Explore DIY projects and creative inspiration from Kourtney Kitchens. A collection of home improvement and crafting ideas."
 >
 	<main>
@@ -11,21 +11,156 @@ import Layout from "../layouts/Layout.astro";
 			<h1 class="text-center text-4xl md:text-5xl mb-8">DIY Projects</h1>
 			<div class="max-w-3xl mx-auto">
 				<p class="text-lg mb-8 text-center">
-					When I'm not writing or speaking, you'll often find me working on a DIY project! 
-					This section is coming soon with tutorials, tips, and inspiration for your next home project.
+					When I'm not writing or speaking, you'll often find me
+					working on a DIY project! Explore tutorials, tips, and
+					inspiration for your next home project.
 				</p>
-				<div class="bg-white rounded-lg p-8 shadow-lg text-center">
-					<p class="mb-6">
-						Check back soon for creative DIY ideas, home improvement tips, and crafting inspiration!
-					</p>
-					<a 
-						href="/about" 
-						class="text-links hover:underline"
-					>
-						Learn more about Kourtney
-					</a>
+				<div
+					class="payhip-wrapper"
+					style="display: flex; justify-content: center; align-items: flex-start; width: 100%;"
+				>
+					<div class="payhip-embed-page" data-key="j24Uo"></div>
 				</div>
 			</div>
 		</div>
 	</main>
+	<script
+		is:inline
+		type="text/javascript"
+		src="https://payhip.com/embed-page.js?v=24u68984"></script>
 </Layout>
+
+<style>
+	/* Wrapper to force centering using flexbox */
+	.payhip-wrapper {
+		display: flex !important;
+		justify-content: center !important;
+		align-items: flex-start !important;
+		width: 100% !important;
+		flex-wrap: wrap !important;
+	}
+
+	.payhip-embed-page {
+		display: flex !important;
+		justify-content: center !important;
+		align-items: flex-start !important;
+		width: 100% !important;
+		flex-wrap: wrap !important;
+	}
+
+	/* Force all children to be centered */
+	.payhip-embed-page > * {
+		margin-left: auto !important;
+		margin-right: auto !important;
+		margin-bottom: 0 !important;
+		display: block !important;
+		max-width: 100% !important;
+	}
+
+	.payhip-embed-page iframe {
+		margin-left: auto !important;
+		margin-right: auto !important;
+		margin-bottom: 0 !important;
+		display: block !important;
+		max-width: 100% !important;
+	}
+
+	/* Remove bottom padding/margin from Payhip elements on mobile */
+	@media (max-width: 768px) {
+		.payhip-wrapper {
+			margin-bottom: 0 !important;
+			padding-bottom: 0 !important;
+		}
+
+		.payhip-embed-page {
+			margin-bottom: 0 !important;
+			padding-bottom: 0 !important;
+		}
+
+		.payhip-embed-page > * {
+			margin-bottom: 0 !important;
+			padding-bottom: 0 !important;
+		}
+
+		.payhip-embed-page > * > * {
+			margin-bottom: 0 !important;
+			padding-bottom: 0 !important;
+		}
+	}
+</style>
+
+<script is:inline>
+	(function () {
+		// Keep wrapper centered using inline styles
+		function ensureCentering() {
+			const wrapper = document.querySelector(".payhip-wrapper");
+			if (wrapper) {
+				wrapper.style.display = "flex";
+				wrapper.style.justifyContent = "center";
+				wrapper.style.alignItems = "flex-start";
+				wrapper.style.width = "100%";
+				wrapper.style.marginBottom = "0";
+				wrapper.style.paddingBottom = "0";
+			}
+
+			const payhipContainer =
+				document.querySelector(".payhip-embed-page");
+			if (payhipContainer) {
+				// Set container to flex
+				payhipContainer.style.display = "flex";
+				payhipContainer.style.justifyContent = "center";
+				payhipContainer.style.alignItems = "flex-start";
+				payhipContainer.style.width = "100%";
+				payhipContainer.style.flexWrap = "wrap";
+				payhipContainer.style.marginBottom = "0";
+				payhipContainer.style.paddingBottom = "0";
+
+				// Center all direct children and remove bottom spacing
+				Array.from(payhipContainer.children).forEach((child) => {
+					if (
+						child.tagName !== "SCRIPT" &&
+						child.tagName !== "STYLE"
+					) {
+						child.style.marginLeft = "auto";
+						child.style.marginRight = "auto";
+						child.style.marginBottom = "0";
+						child.style.paddingBottom = "0";
+						child.style.display = "block";
+						child.style.maxWidth = "100%";
+					}
+				});
+
+				// Also remove bottom spacing from nested elements
+				const allElements = payhipContainer.querySelectorAll("*");
+				allElements.forEach((element) => {
+					if (
+						element.tagName !== "SCRIPT" &&
+						element.tagName !== "STYLE"
+					) {
+						element.style.marginBottom = "0";
+						element.style.paddingBottom = "0";
+					}
+				});
+			}
+		}
+
+		// Run multiple times to catch Payhip's content injection
+		function init() {
+			ensureCentering();
+			setTimeout(ensureCentering, 500);
+			setTimeout(ensureCentering, 1000);
+			setTimeout(ensureCentering, 2000);
+
+			window.addEventListener("load", function () {
+				setTimeout(ensureCentering, 500);
+				setTimeout(ensureCentering, 1500);
+			});
+		}
+
+		if (document.readyState === "loading") {
+			document.addEventListener("DOMContentLoaded", init);
+		} else {
+			init();
+		}
+	})();
+</script>
