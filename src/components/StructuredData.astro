@@ -2,6 +2,7 @@
 // Structured Data (JSON-LD) for SEO
 const siteURL = Astro.site || 'https://kourtneykitchens.com';
 const currentURL = new URL(Astro.url.pathname, siteURL).toString();
+const defaultImage = new URL('/images/homepagePic.jpeg', siteURL).toString();
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify({
@@ -13,6 +14,7 @@ const currentURL = new URL(Astro.url.pathname, siteURL).toString();
       "name": "Kourtney Kitchens",
       "description": "Author of The Harvest, encouraging women to pursue deep relationship with Jesus and share their faith authentically in everyday life.",
       "url": siteURL,
+      "image": defaultImage,
       "sameAs": [
         "https://www.instagram.com/inthemessymiddlewithkourt/",
         "https://www.facebook.com/kourtney.kitchens1"
@@ -42,6 +44,7 @@ const currentURL = new URL(Astro.url.pathname, siteURL).toString();
       "url": siteURL,
       "name": "Kourtney Kitchens",
       "description": "Official website of Kourtney Kitchens, author of The Harvest. Empowering women to share their faith and make disciples in everyday life.",
+      "image": defaultImage,
       "publisher": {
         "@id": `${siteURL}/#person`
       },
